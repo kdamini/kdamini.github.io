@@ -1,79 +1,150 @@
-/* --- FORCE HERO BACKGROUND + FULL SCREEN --- */
-header.hero {
-  min-height: 100vh !important;
-  width: 100% !important;
-
-  background-image: url("fall2025.jpg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  position: relative !important;
-  padding: 2rem !important;
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  box-sizing: border-box;
 }
 
-/* overlay (optional, improves readability) */
-header.hero::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  background: rgba(0,0,0,0.35) !important;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-/* --- BROWN BOX (ON TOP OF OVERLAY) --- */
-header.hero .hero-box {
-  position: relative !important;
-  z-index: 1 !important;
+/* =========================
+   FULL-PAGE BACKGROUND
+========================= */
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
 
-  display: flex !important;
-  align-items: center !important;
-  gap: 2rem !important;
+  background-image: url("fall2025.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  width: min(900px, 100%) !important;
-  padding: 2rem 2.5rem !important;
-
-  background: #6b4f3b !important;
-  color: #f8f5f2 !important;
-
-  border-radius: 20px !important;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35) !important;
+  color: #222;
 }
 
-/* --- TEXT --- */
-header.hero .hero-text h1 {
-  margin: 0 0 0.75rem 0 !important;
-  font-size: 2.6rem !important;
+/* dark overlay so text is readable */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
 }
 
-header.hero .hero-text p {
-  margin: 0 !important;
-  font-size: 1.1rem !important;
-  line-height: 1.6 !important;
-  max-width: 460px !important;
+/* =========================
+   HERO LAYOUT
+========================= */
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
 }
 
-/* --- FIX “INSANELY BIG” PROFILE IMAGE --- */
-header.hero .hero-image img {
-  display: block !important;
-  width: 160px !important;
-  height: 160px !important;
-  max-width: 160px !important;
-  max-height: 160px !important;
+/* =========================
+   BROWN CONTENT BOX
+========================= */
+.hero-box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  border: 4px solid rgba(255,255,255,0.6) !important;
+  max-width: 900px;
+  width: 100%;
+
+  padding: 2.5rem 3rem;
+
+  background-color: #6b4f3b;   /* brown */
+  color: #f8f5f2;
+
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* --- MOBILE --- */
+/* =========================
+   TEXT
+========================= */
+.hero-text h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.hero-text p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 450px;
+}
+
+/* =========================
+   PROFILE IMAGE (HARD FIX)
+========================= */
+.hero-image {
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 150px;
+  height: 150px;
+
+  max-width: 150px;
+  max-height: 150px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  border: 4px solid rgba(255,255,255,0.6);
+  display: block;
+}
+
+/* =========================
+   MAIN CONTENT (OPTIONAL)
+========================= */
+main {
+  padding: 3rem 1.5rem;
+}
+
+main p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-align: center;
+  color: #222;
+  background: rgba(255,255,255,0.85);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 700px) {
-  header.hero .hero-box {
-    flex-direction: column !important;
-    text-align: center !important;
+  .hero-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-text p {
+    max-width: 100%;
   }
 }
 
