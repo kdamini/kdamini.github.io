@@ -1,126 +1,79 @@
-/* ===== Reset / base ===== */
-* {
-  box-sizing: border-box;
+/* --- FORCE HERO BACKGROUND + FULL SCREEN --- */
+header.hero {
+  min-height: 100vh !important;
+  width: 100% !important;
+
+  background-image: url("fall2025.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  position: relative !important;
+  padding: 2rem !important;
 }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #333;
-  background-color: #f5f7fa;
+/* overlay (optional, improves readability) */
+header.hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.35) !important;
 }
 
-/* ===== HERO: full-screen background ===== */
-.hero {
-  min-height: 100vh;
-  background-image: url("fall2025.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* --- BROWN BOX (ON TOP OF OVERLAY) --- */
+header.hero .hero-box {
+  position: relative !important;
+  z-index: 1 !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2rem !important;
 
-  position: relative;
-  padding: 2rem;
+  width: min(900px, 100%) !important;
+  padding: 2rem 2.5rem !important;
+
+  background: #6b4f3b !important;
+  color: #f8f5f2 !important;
+
+  border-radius: 20px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35) !important;
 }
 
-/* dark overlay for readability */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+/* --- TEXT --- */
+header.hero .hero-text h1 {
+  margin: 0 0 0.75rem 0 !important;
+  font-size: 2.6rem !important;
 }
 
-/* ===== Brown content box ===== */
-.hero-box {
-  position: relative; /* above overlay */
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-
-  background-color: #6b4f3b; /* brown */
-  color: #f8f5f2;
-
-  padding: 2.5rem 3rem;
-  border-radius: 20px;
-  max-width: 900px;
-  width: 100%;
-
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+header.hero .hero-text p {
+  margin: 0 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  max-width: 460px !important;
 }
 
-/* ===== Text section ===== */
-.hero-text h1 {
-  margin: 0 0 1rem 0;
-  font-size: 2.7rem;
-  font-weight: 600;
+/* --- FIX “INSANELY BIG” PROFILE IMAGE --- */
+header.hero .hero-image img {
+  display: block !important;
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  border: 4px solid rgba(255,255,255,0.6) !important;
 }
 
-.hero-text p {
-  margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 450px;
-}
-
-/* ===== Profile image ===== */
-.hero-image img {
-  width: 170px;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.6);
-}
-
-/* ===== Main content below hero ===== */
-main {
-  padding: 3rem 1.5rem;
-}
-
-.content p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  text-align: center;
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: #0f766e;
-  color: #e2e8f0;
-  padding: 1rem;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-/* ===== Links ===== */
-a {
-  color: #14b8a6;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ===== Mobile responsiveness ===== */
+/* --- MOBILE --- */
 @media (max-width: 700px) {
-  .hero-box {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem;
-  }
-
-  .hero-text p {
-    max-width: 100%;
-  }
-
-  .hero-image img {
-    width: 140px;
-    height: 140px;
+  header.hero .hero-box {
+    flex-direction: column !important;
+    text-align: center !important;
   }
 }
+
