@@ -76,7 +76,7 @@ body::before {
 
   /* move the box upward */
   align-items: flex-start;
-  padding-top: 6vh;        /* was 8vh; smaller = higher */
+  padding-top: 10vh;        /* was 8vh; smaller = higher */
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -128,7 +128,7 @@ body::before {
 }
 
 .hero-text p {
-  margin: 0;
+  margin: 0 0 1.1rem 0;
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: none;
