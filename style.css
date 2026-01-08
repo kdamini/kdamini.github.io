@@ -37,19 +37,17 @@ body::before {
 }
 
 /* Brown box */
-.hero-box {
+.hero {
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  justify-content: center;
 
-  width: min(900px, 100%);
-  padding: 2.5rem 3rem;
+  /* move box upward */
+  align-items: flex-start;
+  padding-top: 12vh;   /* adjust this number */
 
-  background: #6b4f3b;
-  color: #f8f5f2;
-
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* Text */
