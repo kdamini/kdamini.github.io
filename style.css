@@ -6,7 +6,7 @@ html, body {
   height: 100%;
 }
 
-body {
+body.page-about {
   font-family: "Segoe UI", system-ui, sans-serif;
 
   /* FULL-PAGE BACKGROUND */
@@ -17,6 +17,14 @@ body {
 
   color: #222;
 }
+
+body.page-projects {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 /* Dark overlay so text is readable */
 body::before {
