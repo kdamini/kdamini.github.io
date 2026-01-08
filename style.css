@@ -90,9 +90,10 @@ body::before {
   width: min(900px, 100%);
   padding: 2.5rem 3rem;
 
-  background: #70626f;
-  color: #f8f5f2;
+  background: rgba(112, 98, 111, 0.88);
+  backdrop-filter: blur(6px);
 
+  color: #f8f5f2;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
