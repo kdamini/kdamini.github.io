@@ -27,6 +27,47 @@ body::before {
   z-index: -1;
 }
 
+/* ===== NAVIGATION (About / Projects) ===== */
+.nav {
+  position: absolute;
+  top: 1.25rem;
+  width: 100%;
+  z-index: 20;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 1.2rem;      /* bigger */
+  font-weight: 700;       /* bolder */
+  letter-spacing: 0.02em;
+
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.30);
+  backdrop-filter: blur(6px);
+}
+
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Optional: if you add class="nav-link active" on the current page link */
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 /* HERO (one definition only) */
 .hero {
   min-height: 100vh;
@@ -35,12 +76,12 @@ body::before {
 
   /* move the box upward */
   align-items: flex-start;
-  padding-top: 12vh;        /* tweak: 8vh higher, 15vh lower */
+  padding-top: 6vh;        /* was 8vh; smaller = higher */
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-/* THE BROWN BOX (this was missing) */
+/* THE PURPLE BOX */
 .hero-box {
   display: flex;
   align-items: center;
@@ -90,7 +131,7 @@ body::before {
   margin: 0;
   font-size: 1.1rem;
   line-height: 1.6;
-  max-width: none;   /* let it use space */
+  max-width: none;
 }
 
 /* Main paragraph below */
@@ -117,6 +158,15 @@ footer {
 
 /* Mobile */
 @media (max-width: 700px) {
+  .nav-inner {
+    padding: 0 1rem;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    padding: 0.4rem 0.75rem;
+  }
+
   .hero-box {
     flex-direction: column;
     text-align: center;
@@ -134,3 +184,4 @@ footer {
     max-height: 140px;
   }
 }
+
